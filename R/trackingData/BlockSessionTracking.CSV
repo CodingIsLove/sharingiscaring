@@ -1,0 +1,23 @@
+Weekday   ;Block Planning Session;Rating 0 - 5; Inhibitors
+Montag    ;Block 1               ;4           ; Most Stuff done, but didnt start with the plan
+          ;Block 2               ;-           ; FFHS lessons aka. waste of time
+          ;Block 3               ;1           ;"Meetings all evening long, no time to work on the planned stuff
+"
+Dienstag  ;Block 1               ;            ;
+          ;Block 2               ;            ;
+          ;Block 3               ;            ;
+Mittwoch  ;Block 1               ;            ;
+          ;Block 2               ;            ;
+          ;Block 3               ;            ;
+Donnerstag;Block 1               ;            ;
+          ;Block 2               ;            ;
+          ;Block 3               ;            ;
+Freitag   ;Block 1               ;            ;
+          ;Block 2               ;            ;
+          ;Block 3               ;            ;
+Samstag   ;Block 1               ;            ;
+          ;Block 2               ;            ;
+          ;Block 3               ;            ;
+Sonntag   ;Block 1               ;            ;
+          ;Block 2               ;            ;
+          ;Block 3               ;            ;
