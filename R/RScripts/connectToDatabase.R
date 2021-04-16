@@ -1,3 +1,10 @@
-library(DBI)
-odbcDriverConnect(connection="Driver={ODBC Driver 13 for SQL Server};Server=tcp:db-serv-indoor-loc.database.windows.net,1433;Database=indoor-loc-db;Uid=chris;Pwd=Nolliebigspin1;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
-
+library(odbc)
+con <- dbConnect(
+  odbc(),
+  Driver = "SQL Driver",
+  Server = "db-serv-indoor-loc.database.windows.net",
+  Database = "indoor-loc-db",
+  Trusted_Connection ="True",
+  uid="chris",
+  pwd="Nolliebigspin1"
+)
