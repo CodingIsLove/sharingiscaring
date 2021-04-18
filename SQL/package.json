@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.3",
     "dotenv": "^8.2.0",
     "tedious": "^11.0.7"
   }
