@@ -1,0 +1,17 @@
+{
+  "name": "DesignPatterns",
+  "version": "1.0.0",
+  "description": "For a long time, I wanted to learn more about different design patterns.\r As reference I try to use [Design Patterns: Elements of Reusable Object Oriented Software](https://www.bookdepository.com/Design-Patterns-Erich-Gamma/9780201633610?ref=grid-view&qid=1618810264956&sr=1-1)\r  and the Tutorials provided by [Refactoring Guru](https://refactoring.guru/design-patterns/typescript)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "typescript": "^4.2.4"
+  }
+}
