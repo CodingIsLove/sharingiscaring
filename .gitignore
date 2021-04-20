@@ -3,3 +3,6 @@
 SQL/.env
 DesignPatterns/node_modules
 IoT/BLE/GattServer/node_modules
+IoT/Azure/Service/node_modules
+IoT/Azure/client/node_modules
+IoT/BLE/Central/node_modules
