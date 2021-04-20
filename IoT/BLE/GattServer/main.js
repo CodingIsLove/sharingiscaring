@@ -25,6 +25,9 @@ bleno.on('disconnect', function(clientAddress){
     console.log(`Diconnected from address: ${clientAddress}`)
 })
 
+bleno.on('rssiUpdate', (rssi)=>{
+  console.log(`The current rssi value is: ${rssi}`)
+})
 
 bleno.on('stateChange', function(state){
     console.log('state Changed')

@@ -12,9 +12,10 @@ let redLedChar = new Characteristic({
     uuid:'2AD2',
     properties:['read'],
     descriptors:[redDesc],
-    onReadRequest: function(offset, callback){
+    onReadRequest: function(offset,callback){
         console.log('Red Led was toggled')
         red_led.writeSync(red_led.readSync() ^ 1);
+        bleno.updateRssi()
         callback(this.RESULT_SUCCESS, "Hello Hello bitches")
     },
 })
@@ -25,6 +26,7 @@ let blueLedChar = new Characteristic({
     descriptors:[blueDesc],
     onReadRequest: function(offset, callback){
         console.log('Blue Led was triggered')
+        bleno.updateRssi()
         blue_led.writeSync(blue_led.readSync() ^ 1);
         callback(this.RESULT_SUCCESS, "Hello Hello bitches")
     },
@@ -36,6 +38,7 @@ let whiteLedChar = new Characteristic({
     descriptors:[whiteDesc],
     onReadRequest: function(offset, callback){
         console.log('White Led was triggered')
+        bleno.updateRssi()
         white_led.writeSync(white_led.readSync() ^ 1);
         callback(this.RESULT_SUCCESS, "Hello Hello bitches")
     },
