@@ -2,3 +2,4 @@
 .Rproj.user
 SQL/.env
 DesignPatterns/node_modules
+IoT/BLE/GattServer/node_modules
