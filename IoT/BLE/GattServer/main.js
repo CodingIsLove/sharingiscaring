@@ -25,3 +25,16 @@ bleno.on('disconnect', function(clientAddress){
     console.log(`Diconnected from address: ${clientAddress}`)
 })
 
+
+bleno.on('stateChange', function(state){
+    console.log('state Changed')
+    if(state === 'poweredOn'){
+        console.log('state is powered on')
+        bleno.startAdvertising('MyDevice', ['1809'])
+    }else{
+        console.log('state is powered off')
+        bleno.stopAdvertising()
+    }
+})
+
+
