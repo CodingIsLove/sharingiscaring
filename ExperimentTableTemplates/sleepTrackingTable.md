@@ -8,15 +8,15 @@ In this document you can only find the template in this markdown and the corresp
 
 
 ### Example
-| Calendarweek | Date     | day       | How relaxed do you feel? | wake up time | Hours slept |
-| ------------ | -------- | --------- | ------------------------ | ------------ | ----------- |
-|              | 01.09.21 | Monday    | 3                        | 05:00        | 3           |
-|              | 02.09.21 | Tuesday   | 4                        | 06:00        | 4           |
-|              | 03.09.21 | Wednesday | 1                        | 05:30        | 5           |
-|              | 04.09.21 | Thursday  | 5                        | 06:00        | 5           |
-|              | 05.09.21 | Friday    | 4                        | 06:30        | 2           |
-|              | 06.09.21 | Saturday  | 3                        | 07:00        | 1           |
-|              | 07.09.21 | Sunday    | 2                        | 06:00        | 1           |
+| Calendarweek | Date     | day       | How relaxed do you feel? | bedtime | wake up time | Hours slept |
+| ------------ | -------- | --------- | ------------------------ | ------- | ------------ | ----------- |
+|              | 01.09.21 | Monday    | 3                        | 22:00   | 05:00        | 3           |
+|              | 02.09.21 | Tuesday   | 4                        | 22:30   | 06:00        | 4           |
+|              | 03.09.21 | Wednesday | 1                        | 22:00   | 05:30        | 5           |
+|              | 04.09.21 | Thursday  | 5                        | 22:15   | 06:00        | 5           |
+|              | 05.09.21 | Friday    | 4                        | 24:00   | 06:30        | 2           |
+|              | 06.09.21 | Saturday  | 3                        | 23:30   | 07:00        | 1           |
+|              | 07.09.21 | Sunday    | 2                        | 22:00   | 06:00        | 1           |
 
 ```typescript
 interface sleepTrackingEntry{
