@@ -8,23 +8,23 @@ In this document you can only find the template in this markdown and the corresp
 
 
 ### Example
-| Calendarweek | Date     | day       | How relaxed do you feel? | bedtime | wake up time | Hours slept |
-| ------------ | -------- | --------- | ------------------------ | ------- | ------------ | ----------- |
-|              | 01.09.21 | Monday    | 3                        | 22:00   | 05:00        | 3           |
-|              | 02.09.21 | Tuesday   | 4                        | 22:30   | 06:00        | 4           |
-|              | 03.09.21 | Wednesday | 1                        | 22:00   | 05:30        | 5           |
-|              | 04.09.21 | Thursday  | 5                        | 22:15   | 06:00        | 5           |
-|              | 05.09.21 | Friday    | 4                        | 24:00   | 06:30        | 2           |
-|              | 06.09.21 | Saturday  | 3                        | 23:30   | 07:00        | 1           |
-|              | 07.09.21 | Sunday    | 2                        | 22:00   | 06:00        | 1           |
+| Calendarweek | Date     | day       | How relaxed do you feel? | bedtime | wake up time |
+| ------------ | -------- | --------- | ------------------------ | ------- | ------------ |
+|              | 01.09.21 | Monday    | 3                        | 22:00   | 05:00        |
+|              | 02.09.21 | Tuesday   | 4                        | 22:30   | 06:00        |
+|              | 03.09.21 | Wednesday | 1                        | 22:00   | 05:30        |
+|              | 04.09.21 | Thursday  | 5                        | 22:15   | 06:00        |
+|              | 05.09.21 | Friday    | 4                        | 24:00   | 06:30        |
+|              | 06.09.21 | Saturday  | 3                        | 23:30   | 07:00        |
+|              | 07.09.21 | Sunday    | 2                        | 22:00   | 06:00        |
 
 ```typescript
 interface sleepTrackingEntry{
     date: Date;
     day: Day;
     feeling: number; // between [1,..,5]
+    bedtime: string; // format "hh:mm"
     wakeUpTime: string; // format "hh:mm"
-    hoursSlept: number; // [1,..,12]
 }
 ```
 
@@ -36,9 +36,9 @@ CREATE TABLE sleepTrackingTable(
     calWeek INT,
     date DATE,
     weekDay VARCHAR(10),
+    bedtime VARCHAR(5),
     wakeUpTime VARCHAR(5),
     feeling INT,
-    hoursSlept INT
 )
 ```
 
