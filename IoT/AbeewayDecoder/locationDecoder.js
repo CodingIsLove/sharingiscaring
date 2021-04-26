@@ -17,4 +17,3 @@ Battery: ${parseInt(header.battery,2)}
 AckOpt: ${parseInt(header.ackOpt,2)}
 --------------------------------------
 `)
-

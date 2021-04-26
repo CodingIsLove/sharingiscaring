@@ -1,0 +1,67 @@
+{
+  "EnqueuedTimeUtc": "2021-04-25T14:30:43.7690000Z",
+  "Properties": {},
+  "SystemProperties": {
+    "messageId": "Tpx.ConnectionId.1558_1_1132",
+    "connectionDeviceId": "20635F010800154A",
+    "connectionAuthMethod": "{\"scope\":\"hub\",\"type\":\"sas\",\"issuer\":\"iothub\",\"acceptingIpFilterRule\":null}",
+    "connectionDeviceGenerationId": "637542019873552708",
+    "contentType": "application/json",
+    "contentEncoding": "UTF-8",
+    "enqueuedTime": "2021-04-25T14:30:43.7690000Z"
+  },
+  "Body": {
+    "Time": "2021-04-25T16:30:43.109+02:00",
+    "DevEUI": "20635F010800154A",
+    "FPort": "17",
+    "FCntUp": "689",
+    "MType": "2",
+    "FCntDn": "29",
+    "payload_hex": "032cfa8b090e925c1408867bbb905c4408867bb90896d7a8c34db8488d36d945e0b7",
+    "mic_hex": "2ae79f55",
+    "Lrcid": "00000401",
+    "LrrRSSI": "-106.000000",
+    "LrrSNR": "5.000000",
+    "SpFact": "7",
+    "SubBand": "G2",
+    "Channel": "LC8",
+    "DevLrrCnt": "2",
+    "Lrrid": "00003F40",
+    "Late": "0",
+    "LrrLAT": "47.351440",
+    "LrrLON": "8.490355",
+    "Lrrs": {
+      "Lrr": [
+        {
+          "Lrrid": "00003F40",
+          "Chain": "0",
+          "LrrRSSI": "-106.000000",
+          "LrrSNR": "5.000000",
+          "LrrESP": "-107.193314"
+        },
+        {
+          "Lrrid": "00003F3C",
+          "Chain": "0",
+          "LrrRSSI": "-111.000000",
+          "LrrSNR": "-1.000000",
+          "LrrESP": "-114.539017"
+        }
+      ]
+    },
+    "CustomerID": "100046825",
+    "CustomerData": {
+      "alr": {
+        "pro": "LORA/Swisscom",
+        "ver": "1"
+      }
+    },
+    "ModelCfg": null,
+    "InstantPER": "0.000000",
+    "MeanPER": "0.000000",
+    "DevAddr": "08FB5048",
+    "TxPower": "14.000000",
+    "NbTrans": "1",
+    "Frequency": "867.90",
+    "DynamicClass": "A"
+  }
+}
