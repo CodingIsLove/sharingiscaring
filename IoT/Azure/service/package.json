@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "azure-iothub": "^1.13.1"
+    "azure-iothub": "^1.13.1",
+    "dotenv": "^8.2.0"
   }
 }

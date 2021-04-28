@@ -3,6 +3,11 @@
 SQL/.env
 DesignPatterns/node_modules
 IoT/BLE/GattServer/node_modules
-IoT/Azure/Service/node_modules
+IoT/Azure/service/node_modules
+IoT/Azure/service/.env
 IoT/Azure/client/node_modules
 IoT/BLE/Central/node_modules
+IoT/BLE/iBeacon/node_modules
+IoT/AbeewayDecoder/node_modules
+
+
