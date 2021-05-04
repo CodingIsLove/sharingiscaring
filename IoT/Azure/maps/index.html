@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get Feets wet with Azure Maps</title>
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css"
+          type="text/css"/>
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <script type='text/javascript'>
+        function InitMap() {
+            //Initialize a map instance.
+            let map = new atlas.Map('myMap', {
+                center: [-122.33, 47.6],
+                zoom: 12,
+                view: 'Auto',
+                authOptions: {
+                    authType: 'subscriptionKey',
+                    subscriptionKey: 'M8fzdtCRjQcPZwA6RhOkPo760uAIo7VecXeEWxWuuVU'
+                }
+            });
+
+            //Wait until the map resources are ready.
+            map.events.add('ready', function () {
+                //Create a data source to add your data to.
+                datasource = new atlas.source.DataSource();
+                map.sources.add(datasource);
+
+                //Add a layer for rendering data.
+                map.layers.add(new atlas.layer.BubbleLayer(datasource));
+            });
+        }
+    </script>
+    <style>
+        html, body {
+            margin: 0;
+        }
+
+        #myMap {
+            height: 100vh;
+            widht: 100vw;
+        }
+    </style>
+
+
+</head>
+<body onload="InitMap()">
+<h1>Getting Started with Azure Maps</h1>
+<div id="myMap"></div>
+
+</body>
+</html>

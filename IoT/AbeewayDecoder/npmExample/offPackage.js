@@ -1,6 +1,6 @@
 const {createUPDU} = require('abeeway-driver')
 
 
-const uplinkPayloadHex = '034cd097200c1c3fa30514b602e6d129'
+const uplinkPayloadHex = '035cc49220001c3d280516f902b7d18e'
 let pdu = createUPDU(uplinkPayloadHex)
 console.log(pdu.toJSON())
