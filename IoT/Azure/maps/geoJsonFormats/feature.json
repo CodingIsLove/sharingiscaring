@@ -1,0 +1,12 @@
+{
+  "type": "feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-108.3,33.7]
+  },
+  "properties": {
+    "species": "Bald Eagle",
+    "sex": "male",
+    "age": 7
+  }
+}

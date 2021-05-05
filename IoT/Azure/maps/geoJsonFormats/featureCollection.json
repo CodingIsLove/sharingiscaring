@@ -1,0 +1,29 @@
+{
+  "type": "featureCollection",
+  "features": [
+    {
+      "type": "feature_1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-108.3,33.7]
+      },
+      "properties": {
+        "species": "Bald Eagle",
+        "sex": "male",
+        "age": 7
+      }
+    },
+    {
+      "type": "feature_2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-108.3,33.7]
+      },
+      "properties": {
+        "species": "Bald Eagle",
+        "sex": "male",
+        "age": 7
+      }
+    }
+  ]
+}

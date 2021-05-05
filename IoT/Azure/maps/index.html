@@ -13,11 +13,14 @@
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
     <script type='text/javascript'>
-        function InitMap() {
-            //Initialize a map instance.
-            let map = new atlas.Map('myMap', {
-                center: [-122.33, 47.6],
+        //Initialize a map instance on map creation
+        let map
+        let InitMap = function () {
+            map = new atlas.Map('myMap', {
+                language: 'de-CH',
+                center: [8.524247755152878, 47.39349666109848],
                 zoom: 12,
+                style: 'road',
                 view: 'Auto',
                 authOptions: {
                     authType: 'subscriptionKey',
@@ -27,13 +30,89 @@
 
             //Wait until the map resources are ready.
             map.events.add('ready', function () {
-                //Create a data source to add your data to.
-                datasource = new atlas.source.DataSource();
-                map.sources.add(datasource);
+                console.log('Emited Event: Map is ready now')
 
-                //Add a layer for rendering data.
-                map.layers.add(new atlas.layer.BubbleLayer(datasource));
+                // Add Style Control to the map
+                map.controls.add(
+                    new atlas.control.StyleControl({
+                        mapStyles: ['road', 'grayscale_dark', 'night', 'road_shaded_relief', 'satellite', 'satellite_road_labels']
+                    }),
+                    {position: 'top-right'}
+                )
+
+                // Add Zoom Controller
+                map.controls.add(
+                    new atlas.control.ZoomControl(), {
+                        position: 'bottom-right'
+                    }
+                )
+
+                // Pitch Controller
+                map.controls.add(
+                    new atlas.control.PitchControl(), {
+                        position: 'top-right'
+                    }
+                )
+
+                // Compas Controller
+                map.controls.add(
+                    new atlas.control.CompassControl(), {
+                        position: 'bottom-left'
+                    }
+                )
             });
+        }
+
+        let resetCamera = function () {
+            // can be called whenever you want later on
+            map.setCamera({
+                center: [8.524247755152878, 47.49349686109848],
+                zoom: 5,
+                duration: 1000,
+                type: 'ease'
+            })
+        }
+
+        let setStyle = function () {
+            map.setStyle({
+                renderWorldCopies: true,
+                style: 'satellite',
+                showBuildingModels: true,
+                showLogo: false,
+                showFeedbackLink: false
+            })
+        }
+
+        let addGeoJson = function () {
+            let rawGeoJson = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates":[8.524247755152878, 47.38349666809848],
+                },
+                "properties": {
+                    "custom-property": "value"
+                }
+            }
+            let source = new atlas.source.DataSource()
+            source.add(new atlas.data.Point([8.524247755152878, 47.39349666109848]))
+            source.add(rawGeoJson)
+
+            map.sources.add(source)
+
+            // Connect data source to corresponding layer
+            map.layers.add(new atlas.layer.BubbleLayer(source))
+
+
+            // => Just so that you know how to create GeoJSON => But I actually didn't need this data here
+            // Create GeoJson data points
+
+
+            let geoJsonClass = new atlas.data.Feature(new atlas.data.Point([-100, 45]), {
+                "custom-property": "value"
+            });
+
+
         }
     </script>
     <style>
