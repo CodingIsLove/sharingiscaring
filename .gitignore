@@ -9,7 +9,6 @@ IoT/Azure/client/node_modules
 IoT/BLE/Central/node_modules
 IoT/BLE/iBeacon/node_modules
 IoT/AbeewayDecoder/node_modules
-Iot/Azure/db/node_modules
-Iot/Azure/db/env
+Iot/Azure/blob_storage/node_modules
 
 

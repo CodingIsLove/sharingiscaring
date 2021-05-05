@@ -1,27 +1,34 @@
 
+// The output will be parsed as geojson (https://geojson.org/)
 function main(hex_payload) {
-    let parsedContent = {};
+
+    let geoJson = {
+        "type":"Feature",
+        "geometry":{
+            "type":"Point"
+        },
+        "properties":{}
+    }
     let post_type = getPosType(hex_payload.slice(9, 10))
+    console.log(post_type)
     if (hex_payload.slice(0, 2) === '03' && post_type === 'GPS fix') {
-        console.log('It is a position message')
-        // Parse common header
+        geoJson.properties.msgType= "Position Message"
+        geoJson.properties.battery = getBatteryStatus(hex_payload.slice(4, 6))
+        geoJson.properties.tmp = getTemperature(hex_payload.slice(6, 8))
+        geoJson.properties.ack = getAck(hex_payload.slice(8, 9))
+        geoJson.properties.posType = getPosType(hex_payload.slice(9, 10))
+        geoJson.properties.age = getAge(hex_payload.slice(10, 12))
+        geoJson.geometry.coordinates = [
+            getLatitude(hex_payload.slice(12, 18)),
+            getLongitude(hex_payload.slice(18, 24))
+        ]
+        geoJson.properties.ehpe = getEHPE(hex_payload.slice(24, 26))
 
-        parsedContent.msgType= 'Position Message'
-        parsedContent.battery = getBatteryStatus(hex_payload.slice(4, 6))
-        parsedContent.tmp = getTemperature(hex_payload.slice(6, 8))
-        parsedContent.ack = getAck(hex_payload.slice(8, 9))
-        parsedContent.posType = getPosType(hex_payload.slice(9, 10))
-
-        // GPS fix specific data
-        parsedContent.age = getAge(hex_payload.slice(10, 12))
-        parsedContent.lat = getLatitude(hex_payload.slice(12, 18))
-        parsedContent.lon = getLongitude(hex_payload.slice(18, 24))
-        parsedContent.ehpe = getEHPE(hex_payload.slice(24, 26))
-
-        return parsedContent
+        return geoJson
 
     } else {
-        return parsedContent
+        geoJson.properties.error = "Not fixed GPS value"
+        return geoJson
     }
 }
 
@@ -68,9 +75,9 @@ function getEHPE(byte) {
 
 // byte should be in form of 0xbb
 function getBatteryStatus(byte) {
-    if (byte == '00') {
+    if (byte === '00') {
         return 'charging'
-    } else if (byte == 'ff') {
+    } else if (byte === 'ff') {
         return 'measurement_error'
     } else {
         return Number(generalValueDecoder(
@@ -138,3 +145,5 @@ const generalStepSizeDecoder = function (lo, hi, nbits, nresv) {
 const generalValueDecoder = function (value, lo, hi, nbits, nresv) {
     return ((value - nresv / 2) * generalStepSizeDecoder(lo, hi, nbits, nresv) + lo)
 }
+
+//console.log(main('034ca79b20001c3fb90514b00be5e30d')) => For debugging purposes
